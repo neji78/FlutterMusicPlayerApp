@@ -11,6 +11,7 @@ Welcome to the Flutter Music Player App! This project is a simple music player a
 
 ## Project Structure
 
+```
 FlutterMusicPlayerApp/ 
 ├── .gitignore 
 ├── .metadata 
@@ -43,6 +44,7 @@ FlutterMusicPlayerApp/
 ├── macos/ 
 ├── web/ 
 ├── windows/
+```
 
 ## Getting Started
 
