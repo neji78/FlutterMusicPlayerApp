@@ -85,9 +85,6 @@ FlutterMusicPlayerApp/
 
 Contributions are welcome! Please fork the repository and submit a pull request.
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgements
 
@@ -98,6 +95,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-If you have any questions or feedback, feel free to reach out to me at [your-email@example.com].
+If you have any questions or feedback, feel free to reach out to me at [smaelll7554@gmail.com].
 
 Happy coding!
