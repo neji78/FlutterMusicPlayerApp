@@ -11,7 +11,38 @@ Welcome to the Flutter Music Player App! This project is a simple music player a
 
 ## Project Structure
 
-FlutterMusicPlayerApp/ ├── .gitignore ├── .metadata ├── analysis_options.yaml ├── pubspec.lock ├── pubspec.yaml ├── README.md ├── android/ ├── assets/ │ ├── images/ │ │ ├── alen.jpg │ │ ├── avatar.png │ │ └── test.jpg │ └── music/ │ └── test.mp3 ├── ios/ ├── lib/ │ ├── controllers/ │ │ └── music_controller.dart │ ├── models/ │ │ └── music_model.dart │ ├── views/ │ │ ├── home_view.dart │ │ └── player_view.dart │ ├── widgets/ │ │ ├── controller.dart │ │ └── music_logo.dart │ └── main.dart ├── linux/ ├── macos/ ├── web/ ├── windows/
+FlutterMusicPlayerApp/ 
+├── .gitignore 
+├── .metadata 
+├── analysis_options.yaml 
+├── pubspec.lock 
+├── pubspec.yaml 
+├── README.md 
+├── android/ 
+├── assets/ 
+│ ├── images/ 
+│ │ ├── alen.jpg 
+│ │ ├── avatar.png 
+│ │ └── test.jpg 
+│ └── music/ 
+│ └── test.mp3 
+├── ios/ 
+├── lib/ 
+│ ├── controllers/ 
+│ │ └── music_controller.dart 
+│ ├── models/ 
+│ │ └── music_model.dart 
+│ ├── views/ 
+│ │ ├── home_view.dart 
+│ │ └── player_view.dart 
+│ ├── widgets/ 
+│ │ ├── controller.dart 
+│ │ └── music_logo.dart 
+│ └── main.dart 
+├── linux/ 
+├── macos/ 
+├── web/ 
+├── windows/
 
 ## Getting Started
 
