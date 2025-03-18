@@ -12,7 +12,6 @@ Welcome to the Flutter Music Player App! This project is a simple music player a
 ## Project Structure
 
 FlutterMusicPlayerApp/ 
-
 ├── .gitignore 
 ├── .metadata 
 ├── analysis_options.yaml 
