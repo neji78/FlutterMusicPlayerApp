@@ -3,7 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  flutter_media_metadata
+  audioplayers_windows
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

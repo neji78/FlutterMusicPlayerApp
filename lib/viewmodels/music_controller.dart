@@ -4,7 +4,7 @@ class MusicController {
   final AudioPlayer _audioPlayer = AudioPlayer();
 
   void play(String url) {
-    _audioPlayer.play(url);
+    // _audioPlayer.play(url);
   }
 
   void pause() {

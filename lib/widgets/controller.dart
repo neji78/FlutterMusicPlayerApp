@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class Controller extends StatelessWidget {
   final VoidCallback onPlayMusicClicked;
 
-  const Controller({required this.onPlayMusicClicked, super.key});
+  const Controller({required this.onPlayMusicClicked});
 
   @override
   Widget build(BuildContext context) {
