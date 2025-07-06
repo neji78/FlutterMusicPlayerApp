@@ -10,38 +10,50 @@ class PlayerView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios)),
-        title: Text('Playing Now'),
+        leading: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back_ios),iconSize: 24),
+        title: Text('Playing Now',style: TextStyle(fontSize: 12,fontWeight: FontWeight.w200),),
         centerTitle: true,
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border))
+          IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border),iconSize: 24)
         ],
       ),
       body: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SizedBox(height: 72,),
+            SizedBox(height: 305,),
+            SizedBox(height: 40,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 32,
               children: [
-                IconButton(onPressed: (){}, icon: Icon(Icons.shuffle_rounded)),
+                IconButton(onPressed: (){}, icon: Icon(Icons.shuffle_rounded),iconSize: 24),
                 Column(
                   children: [
-                    Text('Song Name', style: TextStyle(fontSize: 24)),
-                    Text('Artist Name', style: TextStyle(fontSize: 18)),
+                    Text('Song Name', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
+                    Text('Artist Name', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300)),
                   ],
                 ),
-                IconButton(onPressed: (){}, icon: Icon(Icons.loop))
+                IconButton(onPressed: (){}, icon: Icon(Icons.loop),iconSize: 24)
               ],
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Icon(Icons.play_arrow),
-              style: ElevatedButton.styleFrom(
-                shape: CircleBorder(),
-                padding: EdgeInsets.all(24),
-              ),
-            )
+            SizedBox(height: 40,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              spacing: 30,
+              children: [
+                IconButton(onPressed: (){}, icon: Icon(Icons.skip_previous),iconSize: 45,),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Icon(Icons.play_arrow,size: 45,),
+                  style: ElevatedButton.styleFrom(
+                    shape: CircleBorder(),
+                    padding: EdgeInsets.all(24),
+                  )
+                ),
+                IconButton(onPressed: (){}, icon: Icon(Icons.skip_next),iconSize: 45),
+              ],
+            ),
             // MusicLogo(),
             // Text('Song Name', style: TextStyle(fontSize: 24)),
             // Text('Artist Name', style: TextStyle(fontSize: 18)),
