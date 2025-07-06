@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/views/player_view.dart';
+import 'package:music_player/views/screens/player_view.dart';
 
 class HomeView extends StatelessWidget {
   @override
