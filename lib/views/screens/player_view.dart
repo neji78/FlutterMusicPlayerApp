@@ -9,50 +9,118 @@ class PlayerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color(0xffFFB61D),
-          leading: IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset('assets/icons/bxs-chevron-left.svg',
-                width: 24,
-                height: 24,
-                colorFilter:
-                    const ColorFilter.mode(Colors.black, BlendMode.srcIn)),
-            iconSize: 24,
-          ),
-          title: Text(
-            'Playing Now',
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w200),
-          ),
-          centerTitle: true,
-          actions: [
-            IconButton(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight),
+        child: Stack(
+          children: [
+            // Base background color (your primary color)
+            Container(
+              color: Color(0xff161616),
+              width: double.infinity,
+              height: 100,
+            ),
+
+            // Overlay color (e.g., semi-transparent black)
+            Container(
+              color: Color(0xffFF8A00).withAlpha(50), // Change opacity as needed
+              width: double.infinity,
+              height: 100,
+            ),
+
+            // Transparent AppBar with icons/text
+            AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              leading: IconButton(
                 onPressed: () {},
-                icon: SvgPicture.asset('assets/icons/heart.svg',
+                icon: SvgPicture.asset(
+                  'assets/icons/bxs-chevron-left.svg',
+                  width: 24,
+                  height: 24,
+                  colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                ),
+              ),
+              title: Text(
+                'Playing Now',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w200,
+                  color: Colors.white,
+                ),
+              ),
+              centerTitle: true,
+              actions: [
+                IconButton(
+                  onPressed: () {},
+                  icon: SvgPicture.asset(
+                    'assets/icons/heart.svg',
                     width: 24,
                     height: 24,
-                    colorFilter:
-                        const ColorFilter.mode(Colors.black, BlendMode.srcIn)),
-                iconSize: 24)
+                    colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
+      )
+        ,
+        // appBar: AppBar(
+        //   // backgroundColor: ,
+        //   leading: IconButton(
+        //     onPressed: () {},
+        //     icon: SvgPicture.asset('assets/icons/bxs-chevron-left.svg',
+        //         width: 24,
+        //         height: 24,
+        //         colorFilter:
+        //             const ColorFilter.mode(Colors.white, BlendMode.srcIn)),
+        //     iconSize: 24,
+        //   ),
+        //   title: Text(
+        //     'Playing Now',
+        //     style: TextStyle(fontSize: 12, fontWeight: FontWeight.w200,color: Colors.white),
+        //   ),
+        //   centerTitle: true,
+        //   actions: [
+        //     IconButton(
+        //         onPressed: () {},
+        //         icon: SvgPicture.asset('assets/icons/heart.svg',
+        //             width: 24,
+        //             height: 24,
+        //             colorFilter:
+        //                 const ColorFilter.mode(Colors.white, BlendMode.srcIn)),
+        //         iconSize: 24)
+        //   ],
+        // ),
         // backgroundColor: Color(0xffFFB61D),
         body: Stack(
           alignment: Alignment.center,
           children: [
             RotatedBox(
               quarterTurns: 2,
-              child: Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image:
+              child: Stack(
+                children: [
+                  // Background image
+                  Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        colorFilter: ColorFilter.mode(Color(0xff161616), BlendMode.overlay),
+                        image:
                         AssetImage("assets/image/avatar.png"), // 👈 your image
-                    fit: BoxFit.cover,
-                    opacity: 0.2,
+                        fit: BoxFit.cover,
+                        opacity: 0.2,
+                      ),
+                    ),
                   ),
-                ),
+
+                  // Dark overlay
+                  Container(
+                    color: Color(0xffFF8A00).withAlpha(50), // 👈 adjust darkness here
+                  ),
+                ],
               ),
             ),
+
             Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -143,7 +211,7 @@ class PlayerView extends StatelessWidget {
                           child: Text(
                             "03:20",
                             style: TextStyle(
-                                fontSize: 10, fontWeight: FontWeight.w600),
+                                fontSize: 10, fontWeight: FontWeight.w600,color: Colors.white),
                           ),
                         ),
                       ),
@@ -154,7 +222,7 @@ class PlayerView extends StatelessWidget {
                           child: Text(
                             "03:37",
                             style: TextStyle(
-                                fontSize: 10, fontWeight: FontWeight.w600),
+                                fontSize: 10, fontWeight: FontWeight.w600,color: Colors.white),
                           ),
                         ),
                       )
@@ -175,16 +243,16 @@ class PlayerView extends StatelessWidget {
                   children: [
                     IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.shuffle),
+                        icon: Icon(Icons.shuffle,color: Colors.white),
                         iconSize: 24),
                     Column(
                       children: [
                         Text('Song Name',
                             style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w600)),
+                                fontSize: 20, fontWeight: FontWeight.w600,color: Colors.white)),
                         Text('Artist Name',
                             style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.w300)),
+                                fontSize: 12, fontWeight: FontWeight.w300,color: Colors.white)),
                       ],
                     ),
                     IconButton(
@@ -193,7 +261,7 @@ class PlayerView extends StatelessWidget {
                             width: 24,
                             height: 24,
                             colorFilter: const ColorFilter.mode(
-                                Colors.black, BlendMode.srcIn)),
+                                Colors.white, BlendMode.srcIn)),
                         iconSize: 24)
                   ],
                 ),
@@ -210,7 +278,7 @@ class PlayerView extends StatelessWidget {
                           width: 24,
                           height: 24,
                           colorFilter: const ColorFilter.mode(
-                              Colors.black, BlendMode.srcIn)),
+                              Colors.white, BlendMode.srcIn)),
                       iconSize: 45,
                     ),
                     Container(
@@ -260,7 +328,7 @@ class PlayerView extends StatelessWidget {
                             width: 24,
                             height: 24,
                             colorFilter: const ColorFilter.mode(
-                                Colors.black, BlendMode.srcIn)),
+                                Colors.white, BlendMode.srcIn)),
                         iconSize: 45),
                   ],
                 ),
