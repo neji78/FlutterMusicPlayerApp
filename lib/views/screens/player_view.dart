@@ -5,6 +5,7 @@ import 'package:logger/logger.dart';
 import 'package:music_player/locator.dart';
 import 'package:circular_seek_bar/circular_seek_bar.dart';
 
+import '../../models/track.dart';
 import '../../viewmodels/player_view_model.dart';
 
 class PlayerView extends StatelessWidget {
@@ -16,6 +17,7 @@ class PlayerView extends StatelessWidget {
         builder: (context, state)
     {
       final track = state.currentTrack;
+      final player = context.read<MusicPlayerCubit>();
       return Scaffold(
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(kToolbarHeight),
@@ -239,12 +241,12 @@ class PlayerView extends StatelessWidget {
                           iconSize: 24),
                       Column(
                         children: [
-                          Text(track?.title ?? "No Title",
+                          Text(track?.tag.title ?? "No Title",
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                   color: Colors.white)),
-                          Text(track?.artist ?? "No Artist",
+                          Text(track?.tag.albumArtist ?? "No Artist",
                               style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w300,
@@ -298,8 +300,18 @@ class PlayerView extends StatelessWidget {
                           ),
                         ),
                         child: ElevatedButton(
-                          onPressed: () {
-                            _logger.i("play button clicked");
+                          onPressed: () async {
+                            try{
+                              final tr = Track.fromPath("assets/music/test.mp3");
+                              _logger.i("play button clicked");
+                              if(state.playbackState == PlaybackState.playing){
+                                player.pause();
+                              }else{
+                                player.play(await tr);
+                              }
+                            }catch(e){
+                              _logger.e(e);
+                            }
                           },
                           style: ElevatedButton.styleFrom(
                             shape: const CircleBorder(),
@@ -310,7 +322,8 @@ class PlayerView extends StatelessWidget {
                             Colors.transparent, // Optional: hide shadow
                           ),
                           child: SvgPicture.asset(
-                            'assets/icons/Play.svg',
+                            state.playbackState == PlaybackState.playing ?
+                            'assets/icons/pause.svg' : 'assets/icons/Play.svg',
                             width: 45,
                             height: 45,
                             colorFilter: const ColorFilter.mode(
