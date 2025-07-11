@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:music_player/viewmodels/player_view_model.dart';
 import 'package:music_player/views/screens/home_view.dart';
 import 'package:music_player/views/screens/player_view.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: PlayerView(),
+      home: BlocProvider(create: (_) => MusicPlayerCubit(), child: PlayerView()),
     );
   }
 }
