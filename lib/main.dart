@@ -4,7 +4,10 @@ import 'package:music_player/viewmodels/player_view_model.dart';
 import 'package:music_player/views/screens/home_view.dart';
 import 'package:music_player/views/screens/player_view.dart';
 
+import 'locator.dart';
+
 void main() {
+  configureDependencies();
   runApp(
     MyApp(),
   );

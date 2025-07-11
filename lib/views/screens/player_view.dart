@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:music_player/viewmodels/music_controller.dart';
+import 'package:logger/logger.dart';
+import 'package:music_player/locator.dart';
 import 'package:circular_seek_bar/circular_seek_bar.dart';
 
 import '../../viewmodels/player_view_model.dart';
 
 class PlayerView extends StatelessWidget {
-  final MusicController _musicController = MusicController();
+  final _logger = getIt<Logger>();
 
   @override
   Widget build(BuildContext context) {
@@ -75,34 +76,6 @@ class PlayerView extends StatelessWidget {
             ),
           )
           ,
-          // appBar: AppBar(
-          //   // backgroundColor: ,
-          //   leading: IconButton(
-          //     onPressed: () {},
-          //     icon: SvgPicture.asset('assets/icons/bxs-chevron-left.svg',
-          //         width: 24,
-          //         height: 24,
-          //         colorFilter:
-          //             const ColorFilter.mode(Colors.white, BlendMode.srcIn)),
-          //     iconSize: 24,
-          //   ),
-          //   title: Text(
-          //     'Playing Now',
-          //     style: TextStyle(fontSize: 12, fontWeight: FontWeight.w200,color: Colors.white),
-          //   ),
-          //   centerTitle: true,
-          //   actions: [
-          //     IconButton(
-          //         onPressed: () {},
-          //         icon: SvgPicture.asset('assets/icons/heart.svg',
-          //             width: 24,
-          //             height: 24,
-          //             colorFilter:
-          //                 const ColorFilter.mode(Colors.white, BlendMode.srcIn)),
-          //         iconSize: 24)
-          //   ],
-          // ),
-          // backgroundColor: Color(0xffFFB61D),
           body: Stack(
             alignment: Alignment.center,
             children: [
@@ -326,6 +299,7 @@ class PlayerView extends StatelessWidget {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
+                            _logger.i("play button clicked");
                           },
                           style: ElevatedButton.styleFrom(
                             shape: const CircleBorder(),
