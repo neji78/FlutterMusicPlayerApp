@@ -1,0 +1,1 @@
+class PlayListView extends StatelessWidget
