@@ -20,6 +20,7 @@ dependencies:
   injectable: ^2.3.0
   logger: ^2.0.2
   audiotags: ^1.4.5
+  standard_searchbar: ^2.1.1
 
 dev_dependencies:
   flutter_test:
