@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:music_player/views/playlist/recently_played.dart';
 import 'package:standard_searchbar/old/standard_searchbar.dart';
 
-import '../../components/music_card.dart';
 
 class PlayListView extends StatelessWidget {
   @override
@@ -24,6 +23,10 @@ class PlayListView extends StatelessWidget {
                   height: 65,
                   backgroundColor: Colors.white.withAlpha(15),
                   shadow: [],
+                  cursorColor: Colors.white,
+                  textStyle: TextStyle(
+                    color: Colors.white
+                  ),
                 ),
                 RecentlyPlayed()
               ],

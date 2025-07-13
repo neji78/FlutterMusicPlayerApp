@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/components/rounded_avatar.dart';
 
 class MusicCard extends StatelessWidget {
   final String imageUrl;
@@ -15,14 +16,11 @@ class MusicCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: Image.asset(
-              imageUrl,
-              width: 140,
-              height: 140,
-              fit: BoxFit.cover,
-            ),
+          RoundedAvatar(
+            imageUrl: imageUrl,
+            width: 140,
+            height: 140,
+            radius: 12,
           ),
           const SizedBox(height: 8),
           Text(title, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
