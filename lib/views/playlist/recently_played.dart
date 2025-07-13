@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/components/music_card.dart';
+import 'package:music_player/components/music_list_delegate.dart';
+import 'package:music_player/models/track.dart';
 
 class RecentlyPlayed extends StatelessWidget {
   @override

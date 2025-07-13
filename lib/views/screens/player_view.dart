@@ -241,12 +241,12 @@ class PlayerView extends StatelessWidget {
                           iconSize: 24),
                       Column(
                         children: [
-                          Text(track?.tag.title ?? "No Title",
+                          Text(track!.title,
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                   color: Colors.white)),
-                          Text(track?.tag.albumArtist ?? "No Artist",
+                          Text(track!.artist,
                               style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w300,
@@ -302,7 +302,7 @@ class PlayerView extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () async {
                             try{
-                              final tr = Track.fromPath("assets/music/test.mp3");
+                              final tr = Track();
                               _logger.i("play button clicked");
                               if(state.playbackState == PlaybackState.playing){
                                 player.pause();

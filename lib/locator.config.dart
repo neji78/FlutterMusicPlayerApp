@@ -12,6 +12,7 @@
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:logger/logger.dart' as _i974;
+import 'package:music_player/controllers/music_controller.dart' as _i353;
 import 'package:music_player/modules/logger_module.dart' as _i910;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -26,6 +27,7 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     final loggerModule = _$LoggerModule();
+    gh.singleton<_i353.MusicController>(() => _i353.MusicController());
     gh.lazySingleton<_i974.Logger>(() => loggerModule.provideLogger());
     return this;
   }

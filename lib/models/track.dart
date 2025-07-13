@@ -1,18 +1,18 @@
 import 'dart:ui';
 
-import 'package:audiotags/audiotags.dart';
-
 class Track {
   final String path;
-  final Tag tag;
+  final String title;
+  final String artist;
+  final String image;
 
-  Track({required this.path, required this.tag});
+  Track({
+    this.title = 'No Title',
+    this.artist = 'No Artist',
+    this.image = '',
+    this.path = '',
+  });
 
-  /// Async constructor to create a Track from a path and read its tag
-  static Future<Track> fromPath(String path) async {
-    final tag = await AudioTags.read(path)?? Tag(pictures: []);;
-    return Track(path: path, tag: tag);
-  }
 }
 
 

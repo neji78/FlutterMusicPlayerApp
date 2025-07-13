@@ -19,8 +19,8 @@ dependencies:
   get_it: ^7.6.0
   injectable: ^2.3.0
   logger: ^2.0.2
-  audiotags: ^1.4.5
   standard_searchbar: ^2.1.1
+  on_audio_query: ^2.9.0
 
 dev_dependencies:
   flutter_test:

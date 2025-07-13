@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:music_player/viewmodels/playlist_view_model.dart';
 import 'package:music_player/views/playlist/recently_played.dart';
+import 'package:music_player/views/playlist/recommend_list.dart';
 import 'package:standard_searchbar/old/standard_searchbar.dart';
 
 
@@ -28,7 +31,8 @@ class PlayListView extends StatelessWidget {
                     color: Colors.white
                   ),
                 ),
-                RecentlyPlayed()
+                RecentlyPlayed(),
+                BlocProvider(create: (_) => PlayListViewModel(), child: Recommendation())
               ],
             ),
           )),
