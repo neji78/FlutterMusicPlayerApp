@@ -5,6 +5,7 @@ import 'package:music_player/locator.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 
 class MusicDelegate extends StatelessWidget {
+  final double height = 70;
   final _logger = getIt<Logger>();
   final SongModel _songModel;
   MusicDelegate(this._songModel);
@@ -14,19 +15,21 @@ class MusicDelegate extends StatelessWidget {
     return InkWell(
       splashColor: Colors.white.withAlpha(77),
       highlightColor: Colors.white.withAlpha(26),
-      onTap: () {},
+      onTap: () {
+        _logger.d(_songModel);
+      },
       child: Row(
         children: [
           RoundedAvatar(
             imageUrl: "assets/image/alen.jpg",
-            width: 104,
-            height: 104,
+            width: height,
+            height: height,
             radius: 20,
           ),
           const SizedBox(width: 8),
           Container(
-            height: 104,
-            padding: EdgeInsets.only(top: 12,bottom: 30,left: 10),
+            height: height,
+            padding: EdgeInsets.only(top: 10,bottom: 10,left: 10),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(_songModel.title,

@@ -26,9 +26,6 @@ class Recommendation extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        FloatingActionButton(onPressed: (){
-          context.read<PlayListViewModel>().load();
-        }),
 
         Expanded(
           child: BlocBuilder<PlayListViewModel, List<SongModel>>(

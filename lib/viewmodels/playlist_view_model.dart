@@ -6,7 +6,9 @@ import 'package:on_audio_query/on_audio_query.dart';
 class PlayListViewModel extends Cubit<List<SongModel>>{
   final _musicController = getIt<MusicController>();
   PlayListViewModel(
-      ) : super([]);
+      ) : super([]){
+    load();
+  }
   Future<void> load() async {
     state.addAll(await _musicController.getSongs());
     emit(state);
