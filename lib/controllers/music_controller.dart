@@ -15,6 +15,7 @@ class MusicController {
   }
 
   Future<List<SongModel>> getSongs() async {
+    if (!await _audioQuery.checkAndRequest()) return [];
     try {
       return await _audioQuery.querySongs();
     } catch (e) {
@@ -22,11 +23,13 @@ class MusicController {
     }
   }
 
-  Future<void> getImage(int id) async {
+  Future<Uint8List?> getImage(int id) async {
+    if (!await _audioQuery.checkAndRequest()) return Uint8List(0);
     Uint8List? data = await _audioQuery.queryArtwork(
       id,
       ArtworkType.AUDIO,
     );
+    return data;
 
   }
 }

@@ -10,6 +10,7 @@ import 'package:music_player/views/screens/player_view.dart';
 import 'locator.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized(); // ✅ Required!
   configureDependencies();
   final _logger = getIt<Logger>();
   _logger.i("start of app");
